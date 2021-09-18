@@ -11,7 +11,7 @@ namespace ApiVersioningExample.Filters
 
             var v = httpContext.GetRequestedApiVersion();
             if (v != null)
-                httpContext.Response.Headers.Add("Content-Version", v.ToString());
+                httpContext.Response.Headers.Add("Content-Version", v.ToString("V"));
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
